@@ -2,12 +2,13 @@
 
 #include "Master.h"
 
-FILE* const uart = (FILE*) 253;
-FILE* const lcd = (FILE*) 254;
+FILE* const sensor1 = (FILE*) 250;
+FILE* const sensor2 = (FILE*) 251;
+FILE* const sensor3 = (FILE*) 252;
+FILE* const sensor4 = (FILE*) 253;
+FILE* const uart = (FILE*) 254;
 FILE* const null = (FILE*) 255;
 
-#define UART_SUCCESS 1
-#define UART_FAILURE 0
 AddIndexFifo(Tx, UART_FIFO_SIZE, char, UART_SUCCESS, UART_FAILURE)
 AddIndexFifo(Rx, UART_FIFO_SIZE, char, UART_SUCCESS, UART_FAILURE)
 
@@ -103,6 +104,11 @@ int fgetc(FILE* f) {
     if(f == uart) {
         if(RxFifo_Size() > 0) {
             ch = UART_InChar();
+        }
+        return (ch);
+    } else if(f == sensor1){
+                if(uart1RxFifo_Size() > 0) {
+            ch = UART1_InByte();
         }
         return (ch);
     }

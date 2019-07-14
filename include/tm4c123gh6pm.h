@@ -2320,6 +2320,46 @@
 #define NVIC_FPCA_R             (*((volatile uint32_t *)0xE000EF38))
 #define NVIC_FPDSC_R            (*((volatile uint32_t *)0xE000EF3C))
 
+
+//*****************************************************************************
+//
+// The following are defines for the bit fields in the NVIC_EN0 register.
+//
+//*****************************************************************************
+#define NVIC_EN0_INT_M          0xFFFFFFFF  // Interrupt Enable
+#define NVIC_EN0_INT0           0x00000001  // Interrupt 0 enable
+#define NVIC_EN0_INT1           0x00000002  // Interrupt 1 enable
+#define NVIC_EN0_INT2           0x00000004  // Interrupt 2 enable
+#define NVIC_EN0_INT3           0x00000008  // Interrupt 3 enable
+#define NVIC_EN0_INT4           0x00000010  // Interrupt 4 enable
+#define NVIC_EN0_INT5           0x00000020  // Interrupt 5 enable
+#define NVIC_EN0_INT6           0x00000040  // Interrupt 6 enable
+#define NVIC_EN0_INT7           0x00000080  // Interrupt 7 enable
+#define NVIC_EN0_INT8           0x00000100  // Interrupt 8 enable
+#define NVIC_EN0_INT9           0x00000200  // Interrupt 9 enable
+#define NVIC_EN0_INT10          0x00000400  // Interrupt 10 enable
+#define NVIC_EN0_INT11          0x00000800  // Interrupt 11 enable
+#define NVIC_EN0_INT12          0x00001000  // Interrupt 12 enable
+#define NVIC_EN0_INT13          0x00002000  // Interrupt 13 enable
+#define NVIC_EN0_INT14          0x00004000  // Interrupt 14 enable
+#define NVIC_EN0_INT15          0x00008000  // Interrupt 15 enable
+#define NVIC_EN0_INT16          0x00010000  // Interrupt 16 enable
+#define NVIC_EN0_INT17          0x00020000  // Interrupt 17 enable
+#define NVIC_EN0_INT18          0x00040000  // Interrupt 18 enable
+#define NVIC_EN0_INT19          0x00080000  // Interrupt 19 enable
+#define NVIC_EN0_INT20          0x00100000  // Interrupt 20 enable
+#define NVIC_EN0_INT21          0x00200000  // Interrupt 21 enable
+#define NVIC_EN0_INT22          0x00400000  // Interrupt 22 enable
+#define NVIC_EN0_INT23          0x00800000  // Interrupt 23 enable
+#define NVIC_EN0_INT24          0x01000000  // Interrupt 24 enable
+#define NVIC_EN0_INT25          0x02000000  // Interrupt 25 enable
+#define NVIC_EN0_INT26          0x04000000  // Interrupt 26 enable
+#define NVIC_EN0_INT27          0x08000000  // Interrupt 27 enable
+#define NVIC_EN0_INT28          0x10000000  // Interrupt 28 enable
+#define NVIC_EN0_INT29          0x20000000  // Interrupt 29 enable
+#define NVIC_EN0_INT30          0x40000000  // Interrupt 30 enable
+#define NVIC_EN0_INT31          0x80000000  // Interrupt 31 enable
+
 //*****************************************************************************
 //
 // The following are defines for the bit fields in the WDT_O_LOAD register.
@@ -2698,6 +2738,7 @@
 //
 //*****************************************************************************
 #define SSI_CR1_EOT             0x00000010  // End of Transmission
+#define SSI_CR1_SOD             0x00000008  // SSI Slave Mode Output Disable
 #define SSI_CR1_MS              0x00000004  // SSI Master/Slave Select
 #define SSI_CR1_SSE             0x00000002  // SSI Synchronous Serial Port
                                             // Enable

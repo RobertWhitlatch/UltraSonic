@@ -36,29 +36,38 @@ void Interpreter(void) {
     CLEAR_TERMINAL
     fprintf(uart, "Welcome to XeroOS!\n>");
     while(1) {
+        fprintf(uart, "Sensor1 output: %c\n", fgetc(sensor1));
+    }
+
+    while(1) {
         in_char = fgetc(uart);
-        fprintf(uart, "%c\n", in_char);
-        switch(in_char) {
-            case 'h':
-                fprintf(uart,
-                        "h - Help Menu\n"
-                        "i - Information Page\n"
-                        "~ - Clear Screen\n"
-                        );
-                break;
-            case 'i':
-                fprintf(uart,
-                        "Core Freqency = 80MHz\n"
-                        "Interrupts = %s\n",
-                        (CheckInterrupts()) ? "False" : "True"
-                        );
-                break;
-            case '~':
-                CLEAR_TERMINAL
-                break;
-            default:
-                break;
+        if(in_char != EOF){
+            fprintf(uart, "%c\n", in_char);
+            switch(in_char) {
+                case '1':
+                    fprintf(uart, "Sensor1 output: %c\n", fgetc(sensor1));
+                    break;
+                case 'h':
+                    fprintf(uart,
+                            "h - Help Menu\n"
+                            "i - Information Page\n"
+                            "~ - Clear Screen\n"
+                            );
+                    break;
+                case 'i':
+                    fprintf(uart,
+                            "Core Freqency = 80MHz\n"
+                            "Interrupts = %s\n",
+                            (CheckInterrupts()) ? "False" : "True"
+                            );
+                    break;
+                case '~':
+                    CLEAR_TERMINAL
+                    break;
+                default:
+                    break;
+            }
+            fprintf(uart, ">");
         }
-        fprintf(uart, ">");
     }
 }

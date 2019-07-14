@@ -17,14 +17,21 @@
 // Project Includes
 #include "UltraSonicMain.h"
 #include "Interpreter.h"
+#include "UART1.h"
 
 // Environmental Globals
+extern FILE* const sensor1;
+extern FILE* const sensor2;
+extern FILE* const sensor3;
+extern FILE* const sensor4;
 extern FILE* const uart;
 extern FILE* const null;
 
 // Project Globals
 
 // Environmental Definitions
+#define UART_SUCCESS 1
+#define UART_FAILURE 0
 #define UART_FIFO_SIZE 1024
 
 // Project Defines
@@ -32,6 +39,8 @@ extern FILE* const null;
 // Useful Macros
 #define MAX(a,b) ((a>b)?a:b)
 #define MIN(a,b) ((a<b)?a:b)
+#define BIT(x)   (1 << (x))
+#define RAND(x)  (x = (16807*x)%2147483647)
 #define CLEAR_TERMINAL fprintf(uart,"\033[2J\033[1;1H");
 
 // CPU Control Functions

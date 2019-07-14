@@ -415,6 +415,11 @@
               <FileType>1</FileType>
               <FilePath>.\src\UltraSonicMain.c</FilePath>
             </File>
+            <File>
+              <FileName>UART1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\UART1.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
